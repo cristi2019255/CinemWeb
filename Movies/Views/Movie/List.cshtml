@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Movies.Models.Movie>
+@using Microsoft.AspNetCore.Identity
+
+@{
+    ViewData["Title"] = "List";
+}
+@{
+    Layout = "_Layout";
+}
+
+<h1 style="color:white">Movies for you</h1>
+
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="CreateView">Create New</a>
+    </p>
+}
+
+
+<div class="row mt-5 mb-4">
+    @foreach (var item in Model)
+    {
+        @Html.Partial("Movie", item)
+    }
+</div>
+
+
+

@@ -1,0 +1,21 @@
+﻿@model Movie
+@using Microsoft.AspNetCore.Identity
+
+
+<div class="col-lg-4 img_warp shadow-lg" style="background-color:aqua">
+    <img class="card-img img-thumbnail" src="/img/@Model.Image" alt="@Model.name" />
+    <h2>@Model.name</h2>
+    <p><b>Price:</b> @Model.price $</p>
+    <p><b>Description:</b>@Model.descr</p>
+
+    <p>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="btn btn-success" asp-action="EditView" asp-route-id="@Model.id">Edit</a>
+            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model.id">Delete</a>
+        }
+        <a class="btn btn-warning" asp-action="DetailsView" asp-route-id="@Model.id">Details</a>
+        <a class="btn btn-danger" asp-action="Buy" asp-route-id="@Model.id">Buy</a>
+    </p>
+
+</div>

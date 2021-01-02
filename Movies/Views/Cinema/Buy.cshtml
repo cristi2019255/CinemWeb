@@ -1,0 +1,44 @@
+﻿@model List<Movies.Models.Seat>
+
+@{
+    ViewData["Title"] = "Buy";
+}
+
+<h1 style="color:white">Buy</h1>
+<h4 style="color:white">@ViewBag.DateIn - @ViewBag.DateOut</h4>
+<table class="table" style="background-color:white">
+    <thead>
+        <tr>
+            <th>
+               price
+            </th>          
+            <th>
+                number
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.number)
+            </td>
+            <td>
+                <form asp-action="Buy" asp-controller="Seat">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" name="id" value="@item.id" />
+                    <input type="hidden" name="dateIn" value="@ViewBag.DateIn" />
+                    <input type="hidden" name="dateOut" value="@ViewBag.DateOut" />
+                    <div class="form-group">
+                        <input type="submit" value="Buy" class="btn btn-danger" />
+                    </div>
+                </form>
+            </td>
+        </tr>        
+    }
+    </tbody>
+</table>

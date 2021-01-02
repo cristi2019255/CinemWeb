@@ -1,0 +1,30 @@
+﻿@model Movies.Models.Seat
+
+@{
+    ViewData["Title"] = "SuccesfulBrought";
+}
+
+<h1 style="color:white">Succesfuly Brought</h1>
+
+<div style="background-color:white">
+    <h4>Congratulations you reserved the seat</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.price)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.number)
+        </dd>
+    </dl>
+</div>
+<div>
+    
+    <a asp-action="List" asp-controller="Movie">Back to Movies</a>
+</div>

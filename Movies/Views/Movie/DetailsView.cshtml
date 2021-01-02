@@ -1,0 +1,69 @@
+﻿@model Movies.Models.Movie
+@using Microsoft.AspNetCore.Identity
+@{
+    ViewData["Title"] = "DetailsView";
+}
+
+<h1 style="color:white">Details</h1>
+
+<div style="background-color:white">
+    <h4>@Model.name</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.rank)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.rank)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.price) $
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="/img/@Model.Image" alt="@Model.name">
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ganre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ganre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.descr)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.descr)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.actors)
+        </dt>
+        <dd class=" row col-lg-10">
+            @foreach (var actor in Model.actors)
+            {
+                <div class="col-sm-3">
+                    <div>@actor.actor.name</div>
+                    <div>@actor.actor.surname</div>
+                    <div>@actor.role</div>
+                </div>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    @if (User.IsInRole("Admin")) {
+        <a asp-action="EditView" asp-route-id="@Model.id">Edit</a> 
+     }
+      <a asp-action="List">Back to List</a>
+</div>

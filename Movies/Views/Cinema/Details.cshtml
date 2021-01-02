@@ -1,0 +1,51 @@
+﻿@model Movies.Models.Cinema
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="color:white">Details @Model.name</h1>
+
+<div style="background-color:white">
+    <h4>Cinema</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.adress)
+        </dt>
+        <dd class="col-sm-10">
+            <p>@Model.adress.street,@Model.adress.number @Model.adress.city,@Model.adress.country
+            <a asp-action="Edit" asp-controller="Adress" asp-route-id="@Model.adress.id">Edit</a> </>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.seats)
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var seat in Model.seats)
+            {
+                <dl>
+                    <dd>
+                        <div>@seat.number</div>
+                        <div>@seat.price</div>
+                        
+                    </dd>
+                    <dd>
+                        <a asp-action="Edit" asp-controller="Seat" asp-route-id="@seat.id">Edit</a> |
+                        @*<a asp-action="Details" asp-controller="Seat" asp-route-id="@seat.id">Details</a> |*@
+                        <a asp-action="Delete" asp-controller="Seat" asp-route-id="@seat.id">Delete</a>
+                    </dd>
+                </dl>
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="EditAction" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

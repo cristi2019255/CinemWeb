@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Movies.Models.CinemaMovie>
+
+<h1 style="color:white">Please choose the cinema where you would like to watch this movie</h1>
+<table class="table" style="background-color:white">
+    <thead>
+        <tr>
+            <th>
+                Cinema Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (var cinemaMovie in Model)
+     {
+        <tr>
+            <td>
+                @cinemaMovie.cinema.name
+            </td>
+            <td>
+                @cinemaMovie.dateIn - @cinemaMovie.dateOut
+            </td>
+            <td>
+                <form asp-action="Buy" asp-controller="Cinema">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" name="cinemaId" value="@cinemaMovie.cinemaId" />
+                    <input type="hidden" name="dateIn" value="@cinemaMovie.dateIn" />
+                    <input type="hidden" name="dateOut" value="@cinemaMovie.dateOut" />
+
+                    <div class="form-group">
+                        <input type="submit" value="Select" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </td>
+        </tr>
+     }
+</table>

@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-Movies-AFD9A9AB-8CA9-4F9E-8E39-BCFD9E573EAE</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20201229112823_Init11.cs" />
+    <Compile Remove="Data\Migrations\20201229112823_Init11.Designer.cs" />
+    <Compile Remove="Data\Migrations\20201229113226_Init14.cs" />
+    <Compile Remove="Data\Migrations\20201229113226_Init14.Designer.cs" />
+    <Compile Remove="Migrations\20201229113348_Init15.cs" />
+    <Compile Remove="Migrations\20201229113348_Init15.Designer.cs" />
+    <Compile Remove="Migrations\20201229113419_Init16.cs" />
+    <Compile Remove="Migrations\20201229113419_Init16.Designer.cs" />
+    <Compile Remove="Migrations\20201229141536_Init22.cs" />
+    <Compile Remove="Migrations\20201229141536_Init22.Designer.cs" />
+    <Compile Remove="Migrations\20201229141709_Init23.cs" />
+    <Compile Remove="Migrations\20201229141709_Init23.Designer.cs" />
+    <Compile Remove="Migrations\20201229141923_Init25.cs" />
+    <Compile Remove="Migrations\20201229141923_Init25.Designer.cs" />
+    <Compile Remove="Migrations\20201229141957_Init26.cs" />
+    <Compile Remove="Migrations\20201229141957_Init26.Designer.cs" />
+    <Compile Remove="Migrations\20201229142106_Init22.cs" />
+    <Compile Remove="Migrations\20201229142106_Init22.Designer.cs" />
+    <Compile Remove="Migrations\20201229142219_Init23.cs" />
+    <Compile Remove="Migrations\20201229142219_Init23.Designer.cs" />
+    <Compile Remove="Migrations\20201229142258_Init24.cs" />
+    <Compile Remove="Migrations\20201229142258_Init24.Designer.cs" />
+    <Compile Remove="Migrations\20201229142456_Init24.cs" />
+    <Compile Remove="Migrations\20201229142456_Init24.Designer.cs" />
+    <Compile Remove="Migrations\20201229143010_Init26.cs" />
+    <Compile Remove="Migrations\20201229143010_Init26.Designer.cs" />
+    <Compile Remove="Migrations\20201229143050_Init27.cs" />
+    <Compile Remove="Migrations\20201229143050_Init27.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+</Project>
