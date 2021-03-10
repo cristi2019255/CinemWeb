@@ -11,14 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-Movies-AFD9A9AB-8CA9-4F9E-8E39-BCFD9E573EAE")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("Movies")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Movies")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Movies")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: Microsoft.AspNetCore.Mvc.ApplicationParts.RelatedAssemblyAttribute("Movies.Views")]
 
 // Создано классом WriteCodeFragment MSBuild.
 
