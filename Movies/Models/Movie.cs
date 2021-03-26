@@ -9,6 +9,7 @@ namespace Movies.Models
     public class Movie
     {
         public int id { get; set; }
+
         [Range(0,10)]
         public float rank { get; set; }
         public String name { get; set; }

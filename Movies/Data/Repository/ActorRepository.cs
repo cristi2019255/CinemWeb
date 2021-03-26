@@ -17,7 +17,8 @@ namespace Movies.Data.Repository
         }
 
         public IEnumerable<Actor> AllActors {
-            get => _appDbContext.Actors; }
+            get => _appDbContext.Actors; 
+        }
 
         public Actor GetActorsById(int actorId)
         {
